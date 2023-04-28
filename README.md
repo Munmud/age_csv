@@ -68,5 +68,9 @@ data = load_csv(connection=conn,
 
 ```
 
+### Sample Files
+- [Load from csv](https://github.com/Munmud/age_csv/blob/main/sample_load_csv.py)
+- [Save to csv](https://github.com/Munmud/age_csv/blob/main/sample_save_csv.py)
+
 ### Note
 - If you want go use latest age driver download the  age folder[ from here ](https://github.com/apache/age/tree/master/drivers/python)
