@@ -23,8 +23,10 @@ def load_csv(connection: psycopg2.connect,
     edges file name format : edge_label_name.csv
 
     Example:
-    - Creating nodes with label 'People' : People.csv
-    - Creating edges with label 'Purchase' : edge_Purchase.csv
+    - Creating nodes with label 'People'
+        - `People.csv`
+    - Creating edges with label 'Purchase'
+        - `edge_Purchase.csv`
 
     @Params
     -------
@@ -42,6 +44,10 @@ def load_csv(connection: psycopg2.connect,
     --------
     None
     """
+
+    print("-------------------------------------------")
+    print('Checking file...')
+    print("-------------------------------------------")
 
     file_name_list = os.listdir(directory)
     # Check if all csv files are valid
@@ -227,9 +233,11 @@ def load_csv(connection: psycopg2.connect,
             query = ''
 
     edgeCount = len([s for s in file_name_list if s.startswith('edge_')])
+
     print(f'{len(file_name_list)} files are ok')
     print(f'Found vertices file : {len(file_name_list) - edgeCount}')
     print(f'Found edge file : {edgeCount} ')
+    print("-------------------------------------------")
 
     # Add Vertices
     for file_name in file_name_list:
